@@ -1,0 +1,87 @@
+body {
+    background-color: lightgray;
+    font-size:  22px;
+    box-sizing: border-box;
+}
+
+.message {
+    text-align: center;
+    background-color: #64d564;
+    padding: 10px;
+}
+
+#content {
+    padding: 20px;
+    text-align: center;
+}
+
+#home {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+form label {
+    width: 15%;
+    display: inline-block;
+    margin-right: 2%;
+    margin-top:  5px;
+    text-align: left;
+}
+
+form input {
+    display: inline-block;
+    width: 80%;
+    padding: 5px;
+    text-align: left;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+#api_content {
+    width: 75%;
+    margin: auto;
+}
+
+#list_header, h3 {
+    margin: 40px 0px 10px 0px;
+}
+
+.list {
+    font-size: 14px;
+    text-align: left;
+}
+
+.list_name, .list_value {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 5px 2% 5px 0px;
+    vertical-align: top;
+}
+
+.list_name {
+    width: 15%;
+}
+
+.list_value {
+    width:  80%;
+}
+
+#instructions {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#instructions .note {
+    font-style: italic;
+    font-size: 12px;
+    color: red;
+}
+
+#instructions .with_image img {
+    padding: 2px;
+}

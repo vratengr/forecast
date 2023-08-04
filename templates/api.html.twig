@@ -1,0 +1,47 @@
+{# templates/api.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div id='api_content'>
+        <div id='home'><a href="{{ path('_index') }}">Home</a></div>
+        <h1>Register a Weather API</h1>
+
+        {{ form(form) }}
+
+        <div id='instructions'>
+            <div>
+                <span class='label'>Instructions:</span>
+                <span class='note'>(Note: The app can only handle Rest APIs with JSON response)</span>
+            </div>
+            <div>
+                <div>
+                    <div class='list_name'>{API_KEY}:</div>
+                    <div class='list_value'>Please enter your own or a valid generic API Key</div>
+                </div>
+                <div>
+                    <div class='list_name'>{CITY}</div>
+                    <div class='list_value'>Add this when you want to replace the value with the actual city name during search</div>
+                </div>
+                <div>
+                    <div class='list_name'>{COUNTRY}</div>
+                    <div class='list_value'>Add this when you want to replace the value with the actual country name/code during search</div>
+                </div>
+            </div>
+            <div class='with_image'>
+                <div class='list_name'>Data index</div>
+                <div class='list_value'>
+                    Comma-separated JSON index/keys where the temperature value resides
+                    <img src="{{ asset('build/images/data_index.jpg') }}">
+                </div>
+            </div>
+        </div>
+
+        <h3 id='list_header'>List of current APIs</h3>
+        {% for name, api in apis %}
+            <div class='list'>
+                <div class='list_name'>{{ name }}</div>
+                <div class='list_value'><a href="{{ api.url }}" targe='_blank'>{{ api.url }}</a></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

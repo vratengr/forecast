@@ -1,0 +1,34 @@
+{# templates/temperature.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div id='api_content'>
+        <div id='home'><a href="{{ path('_index') }}">Home</a></div>
+        <h1>Get Current Temperature by Location</h1>
+        {{ form(form) }}
+
+        {% if apis is defined and average is defined %}
+            <div id='list_header'><h3>Results</h3></div>
+            <div>
+                <div>
+                    {% for name, api in apis %}
+                        <div class='list'>
+                            <div class='list_name'>{{ name }}</div>
+
+                            {% if api.error is not empty %}
+                                <div class='list_value'>{{ api.error }}</div>
+                            {% else %}
+                                <div class='list_value'>{{ api.temperature }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <div>
+                    <h3>Average Temperature</h3>
+                    <h1>{{ average|round(2) }}</h1>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

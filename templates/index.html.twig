@@ -1,0 +1,11 @@
+{# templates/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div id='index_content'>
+        <h1>What would you like to do?</h1>
+        <div><a href="{{ path('_weather_temperature') }}">Get current temperature by location</a></div>
+        <div><a href="{{ path('_weather_api') }}">Register a Weather API</a></div>
+    </div>
+{% endblock %}
